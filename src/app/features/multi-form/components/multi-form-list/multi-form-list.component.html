@@ -1,0 +1,27 @@
+<div class="multi-form-list">
+  @for (formGroupItem of formGroupItems; track $index) {
+    <app-multi-form-item
+      [formGroupItem]="formGroupItem"
+      (deleteItem)="deleteItem.emit($index)"
+      [isDeleteDisable]="formGroupItems.length > 1"
+      [isCardDisabled]="isDisabled"
+    ></app-multi-form-item>
+  }
+
+  <div
+    class="add-new-item"
+    [class.disabled]="
+      formGroupItems.length >= MAX_LENGTH_OF_FORMS || isDisabled
+    "
+    (click)="addNewItem.emit()"
+  >
+    <div class="add-new-item__circle">
+      <mat-icon
+        class="add-new-item__icon"
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="add"
+      ></mat-icon>
+    </div>
+  </div>
+</div>

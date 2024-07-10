@@ -1,0 +1,29 @@
+<form class="multi-list-item" [formGroup]="formGroupItem">
+  <div class="multi-list-item__icon">
+    @if (isDeleteDisable && !isCardDisabled) {
+      <mat-icon
+        aria-hidden="false"
+        aria-label="delete"
+        fontIcon="cancel"
+        (click)="deleteItem.emit()"
+      ></mat-icon>
+    }
+  </div>
+  <app-input-autocomplete
+    ngDefaultControl
+    [disabled]="isCardDisabled"
+    [formControl]="formGroupItem.get('country') | convertAbstractControl"
+  ></app-input-autocomplete>
+  <app-input
+    ngDefaultControl
+    [disabled]="isCardDisabled"
+    [formControl]="formGroupItem.get('userName') | convertAbstractControl"
+    [labelName]="'Username'"
+  ></app-input>
+  <app-date-picker
+    ngDefaultControl
+    [disabled]="isCardDisabled"
+    [labelName]="'Birthday'"
+    [formControl]="formGroupItem.get('birthDate') | convertAbstractControl"
+  ></app-date-picker>
+</form>

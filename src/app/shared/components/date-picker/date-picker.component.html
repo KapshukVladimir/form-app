@@ -1,0 +1,13 @@
+<mat-form-field class="field-wrapper" (click)="picker.open()">
+  <mat-label>{{ labelName }}</mat-label>
+  <input
+    matInput
+    [disabled]="disabled"
+    [formControl]="formControl"
+    [matDatepicker]="picker"
+    [readonly]="true"
+    [max]="maxDate"
+  />
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>

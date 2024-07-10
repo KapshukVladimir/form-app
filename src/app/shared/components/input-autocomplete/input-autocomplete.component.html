@@ -1,0 +1,25 @@
+<mat-form-field class="field-wrapper">
+  <mat-label>Country</mat-label>
+  <input
+    matInput
+    [readonly]="disabled"
+    [formControl]="formControl"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete #auto="matAutocomplete">
+    @for (country of filteredCountries | async; track $index) {
+      <mat-option [value]="country">
+        {{ country }}
+      </mat-option>
+    }
+  </mat-autocomplete>
+  @if (formControl.hasError("required")) {
+    <mat-error> This field is required. </mat-error>
+  }
+
+  @if (formControl.hasError("invalidCountry")) {
+    <mat-error>
+      Invalid country selected. Please choose from the list.
+    </mat-error>
+  }
+</mat-form-field>

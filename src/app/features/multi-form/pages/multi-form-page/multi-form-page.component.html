@@ -1,0 +1,37 @@
+<div class="multi-form-page">
+  <div class="multi-form-page__actions">
+    <app-button
+      (click)="!isSubmitting ? submitForms() : null"
+      [color]="TButtonColors.PRIMARY"
+      [isDisabled]="formArray.invalid || isSubmitting"
+    >
+      Submit all forms
+    </app-button>
+
+    @if (formArray.length === MAX_LENGTH_OF_FORMS) {
+      <mat-hint></mat-hint>
+      You can't create more than 10 forms
+    }
+
+    @if (isSubmitting) {
+      <div class="multi-form-page__cancel-wrapper">
+        <app-button
+          (click)="cancelSubmission()"
+          [color]="TButtonColors.CANCEL"
+          [isDisabled]="formArray.invalid"
+        >
+          Cancel
+        </app-button>
+        <span>{{ remainingTime | displayTimeConverter }}</span>
+      </div>
+    }
+  </div>
+  <div class="multi-form-page__content">
+    <app-multi-form-list
+      [formGroupItems]="getFormGroups"
+      (addNewItem)="addNewItem()"
+      (deleteItem)="deleteItem($event)"
+      [isDisabled]="isSubmitting"
+    ></app-multi-form-list>
+  </div>
+</div>

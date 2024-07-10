@@ -1,0 +1,43 @@
+.multi-form-list {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.add-new-item {
+  width: 300px;
+  height: 300px;
+  padding: 8px;
+  border: 1px dashed #0684e4;;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color .3s ease-in-out;
+  cursor: pointer;
+
+  &.disabled {
+    opacity: .2;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: aliceblue;
+  }
+
+  &__circle {
+    width: 50px;
+    height: 50px;
+    border: 1px dashed #0684e4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    color: #0684e4;
+  }
+}
