@@ -25,7 +25,6 @@ import { provideNativeDateAdapter } from '@angular/material/core';
   ],
   providers: [provideNativeDateAdapter()],
   templateUrl: './date-picker.component.html',
-  styleUrl: './date-picker.component.scss',
 })
 export class DatePickerComponent {
   @Input() formControl!: FormControl;

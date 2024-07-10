@@ -31,7 +31,6 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     MatFormFieldModule,
   ],
   templateUrl: './input-autocomplete.component.html',
-  styleUrl: './input-autocomplete.component.scss',
 })
 export class InputAutocompleteComponent implements OnInit {
   @Input() formControl: FormControl = new FormControl<string>('');

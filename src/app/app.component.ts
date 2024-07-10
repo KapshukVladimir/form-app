@@ -6,7 +6,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
   imports: [RouterOutlet, NgbModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
