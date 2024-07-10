@@ -7,5 +7,10 @@ export const routes: Routes = [
       import(
         './features/multi-form/pages/multi-form-page/multi-form-page.component'
       ).then((m) => m.MultiFormPageComponent),
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];
